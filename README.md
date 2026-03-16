@@ -1,7 +1,19 @@
 # Selenium Python File Upload & Download Automation Framework
 
+![CI](https://github.com/Prajwalpjoshi/selenium-python-file-automation/actions/workflows/selenium-tests.yml/badge.svg)
+![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)
+![Selenium](https://img.shields.io/badge/Selenium-Automation-green?logo=selenium)
+![PyTest](https://img.shields.io/badge/PyTest-Framework-orange)
+
+---
+
+## 📌 Project Overview
+
 This project demonstrates an **automation testing framework built using Python, Selenium WebDriver, and PyTest**.
-It automates file upload and file download functionality and generates test execution reports.
+
+The framework automates **file upload and file download functionality** and generates a **detailed HTML test report**.
+
+It also integrates **GitHub Actions CI/CD pipeline** to automatically run tests whenever code is pushed to the repository.
 
 ---
 
@@ -14,7 +26,8 @@ It automates file upload and file download functionality and generates test exec
 * HTML Test Reports using pytest-html
 * Custom Chrome download directory
 * WebDriver Manager integration
-* GitHub CI/CD pipeline for automated test execution
+* GitHub Actions CI/CD pipeline
+* Headless browser execution for CI
 
 ---
 
@@ -33,6 +46,10 @@ It automates file upload and file download functionality and generates test exec
 ```
 selenium-python-file-automation
 │
+├── .github
+│   └── workflows
+│       └── selenium-tests.yml
+│
 ├── pages
 │   ├── upload_page.py
 │   └── download_page.py
@@ -45,10 +62,13 @@ selenium-python-file-automation
 │   ├── driver_setup.py
 │   └── screenshot.py
 │
-├── downloads
-├── screenshots
 ├── testdata
 │   └── sample.txt
+│
+├── downloads
+├── screenshots
+├── assets
+│   └── report.png
 │
 ├── requirements.txt
 └── README.md
@@ -56,7 +76,7 @@ selenium-python-file-automation
 
 ---
 
-## ▶ How to Run Tests
+## ▶ How to Run Tests Locally
 
 ### Install dependencies
 
@@ -70,7 +90,7 @@ pip install -r requirements.txt
 pytest
 ```
 
-### Generate HTML test report
+### Generate HTML report
 
 ```
 pytest --html=report.html
@@ -80,14 +100,38 @@ pytest --html=report.html
 
 ## 📊 Test Report
 
-The framework generates an **HTML report** after execution showing:
+The framework generates an **HTML report** after execution.
 
-* Test results
-* Execution time
-* Pass/Fail summary
+Example:
+
+![Test Report](assets/report.png)
+
+---
+
+## ⚙ CI/CD Pipeline
+
+The project uses **GitHub Actions** to automatically run Selenium tests whenever code is pushed.
+
+Workflow:
+
+```
+Push Code
+   ↓
+GitHub Actions Triggered
+   ↓
+Install Dependencies
+   ↓
+Install Chrome Browser
+   ↓
+Run Selenium Tests
+   ↓
+Generate HTML Test Report
+```
 
 ---
 
 ## 👨‍💻 Author
 
 **Prajwal Joshi**
+
+Full Stack Developer | Automation Enthusiast
