@@ -1,7 +1,5 @@
-from utils.screenshot import capture_screenshot
+import time
 
-try:
-    assert message == "File Uploaded!"
-except:
-    capture_screenshot(driver)
-    raise
+def capture_screenshot(driver):
+    filename = f"screenshots/failure_{int(time.time())}.png"
+    driver.save_screenshot(filename)
